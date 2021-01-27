@@ -1,7 +1,8 @@
 import requests
 
-r = requests.get('https://randomuser.me/api/?results=5&gender=male&nat=us,gb')
-
+p = {'results':5, 'gender':'male', 'nat':['us', 'gb']}
+url = 'https://randomuser.me/api/'
+r = requests.get(url, p)
 data = r.json()['results']
 
 for i in data:
